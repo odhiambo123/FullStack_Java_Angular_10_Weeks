@@ -10,10 +10,17 @@ categories: FullStack
     - directory is represented in memory as a file.
     - terminal window, hard disk or partitions are represented as files.
 ### Working with files.
-- file 
+- `file` 
     - everything is a file
     - use the file command to determine the type of file. e.g file file.txt
     - the file command 
+- `ls` 
+    - list items in a directory
+- `cd`
+    - change directory
+        - `cd name_of_directory`
+- rmdir
+    - removes directory
 - `touch`
     - is a way to create a file
     - using some flags the touch command can create some properties while creating an empty file 
@@ -90,4 +97,15 @@ one `
 - less
 - strings
     - display readable ascii strings found in binary files
-    
+
+- vim
+    - visual mode
+        - type v
+    - type mode
+        - type i or a
+    - editing mode
+        - press esc
+        - use vim new_file
+    - leaving vim
+        - go to editing mode
+        - :wq
