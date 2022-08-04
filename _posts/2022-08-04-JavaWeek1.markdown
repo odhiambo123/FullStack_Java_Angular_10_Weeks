@@ -41,29 +41,29 @@ ________________________________________________________
 | Same name different parameters| Same name Same parameters|
 
 
-# Interview Question
+### Interview Question
 -----------------------
-2. method overloading we have methods with same name but different parameters, on the other hand in method
+- Method overloading we have methods with same name but different parameters, on the other hand in method
 overriding we have same name and same parameters
-3. method overloading can be done within same class or in parent and child class but method overriding can
+- method overloading can be done within same class or in parent and child class but method overriding can
 be done in parent and child class only
 
 
-# Final
+### Final
 - the final keyword in java is used to restrict the user
 - final keyword can be used in many context
-1. variable
-2. method
-3. class
+    -  variable
+    - method
+    - class
 
 
-- when we use final keyword with variable, it become constant means its value cannot be changed
-- when we use final keyword with parent class method, the child cannot override that method
-- when we use final keyword with class, no other class can able to inherit from the class
+- When we use final keyword with variable, it become constant means its value cannot be changed
+- When we use final keyword with parent class method, the child cannot override that method
+- When we use final keyword with class, no other class can able to inherit from the class
 
 
 # Abstraction 
-Abstraction is a process of hiding the implementation details and showig only functionality to the user
+Abstraction is a process of hiding the implementation details and showing only functionality to the user
 in another word, it show only essential things to the user and hide the internal details
 
 # Abstract class and method
