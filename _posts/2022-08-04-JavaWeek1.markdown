@@ -34,8 +34,9 @@ categories: Linux Intro
 | Key differences btw method overloading and overriding |
 |_______________________________________________________|
 |Overloading               |  Overriding                |
-|_______________________________________________________|
-|
+|__________________________|____________________________|
+|Adding behavior  |Changing behavior |
+|Same name different parameters| Same name Same parameters|
 
 # Interview Question
 -----------------------
