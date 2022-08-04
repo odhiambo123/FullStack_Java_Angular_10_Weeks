@@ -32,9 +32,7 @@ categories: Linux Intro
         - multiple methods with same names and same parameters
         - It only takes place btw child and parent class but not within a class.
     
-    
-    | Key differences btw method overloading and overriding |
-    |---------------------------|---------------------------|
+## Key differences btw method overloading and overriding 
     | Overloading               |  Overriding               |
     |---------------------------|---------------------------|
     | Adding behavior           | Changing behavior         |
