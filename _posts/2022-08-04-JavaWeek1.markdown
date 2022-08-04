@@ -12,7 +12,8 @@ categories: Linux Intro
 - in many shapes/forms
 
 # There are two type of polymorphism
-1. Static / compile time
+
+- Static / compile time
     - Method overloading - static
         - Multiple methods, same name but different parameters
         - within a class or between parent and child classes
@@ -23,14 +24,14 @@ categories: Linux Intro
     - Different order of parameters
     - Same return types
 
-2. Dynamic / runtime
+- Dynamic / runtime
     - Method overriding - dynamic
         - Used to provide a specific implementation of a method that is already implemented by the parent class
         - It is used for runtime polymorphism
         - It changes the behavior
         - multiple methods with same names and same parameters
         - It only takes place btw child and parent class but not within a class.
-        - 
+ 
 ________________________________________________________
 | Key differences btw method overloading and overriding |
 |_______________________________________________________|
