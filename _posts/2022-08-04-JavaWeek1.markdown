@@ -40,8 +40,6 @@ categories: Linux Intro
 
 # Interview Question
 -----------------------
-Method overloading vs Method Overriding
-1. method overloading is all about adding behaviour and method overriding is changing behavious
 2. method overloading we have methods with same name but different parameters, on the other hand in method
 overriding we have same name and same parameters
 3. method overloading can be done within same class or in parent and child class but method overriding can
