@@ -7,36 +7,33 @@ categories: Linux Intro
 
 
 # Polymorphism
-- this is one of the mail piller of OOPs
-- poly (many) + morph (shape)
+- This is one of the main pillars of OOPs
+- Poly (many) + morph (shape)
+- in many shapes/forms
 
-# there are two type of polymorphism
-1. static / compile time
-2. dynamic / runtime
+# There are two type of polymorphism
+1. Static / compile time
+    - Method overloading - static
+        - Multiple methods, same name but different parameters
+        - within a class or between parent and child classes
+        - It is all about adding behavior to a method
+    ### Conditions
+    - Different number of parameters
+    - Different type of parameters
+    - Different order of parameters
+    - Same return types
 
-method overloading - static 
-method overriding - dynamic
+2. Dynamic / runtime
+    - Method overriding - dynamic
+        - Used to provide a specific implementation of a method that is already implemented by the parent class
+        - It is used for runtime polymorphism
+        - It changes the behavior
+        - multiple methods with same names and same parameters
+        - It only takes place btw child and parent class but not within a class.
 
-
-# method overloading
-- in this case, we define multiple methods with the same name by changing their parameters
-- this can be performed either within a class as well as between parent and child class
-- method overloading is all about defining multiple or adding behaviour to a method
-
-# Condition for method overloading
-1. different number of parameters
-2. different type of parameters
-3. different order of parameters
-4. different return type  -   No
-
-
-# Method Overriding
-- method overriding is used to provide the specific implementation of a method that is already provided by
-the parent / super class
-- method overriding is used for runtime polymorphism
-- it is all about CHANGING the behaviour
-- in this case, we define multiple methods with the same name and SAME PARAMETERS
-- this can be performed only between parent and child class and never can be doen within a class
+| Key differences btw method overloading and overriding |
+|_______________________________________________________|
+|
 
 # Interview Question
 -----------------------
