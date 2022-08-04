@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "Java Week One"
+date:   2022-08-04
+categories: Linux Intro
+---
+
+
+# Polymorphism
+- this is one of the mail piller of OOPs
+- poly (many) + morph (shape)
+
+# there are two type of polymorphism
+1. static / compile time
+2. dynamic / runtime
+
+method overloading - static 
+method overriding - dynamic
+
+
+# method overloading
+- in this case, we define multiple methods with the same name by changing their parameters
+- this can be performed either within a class as well as between parent and child class
+- method overloading is all about defining multiple or adding behaviour to a method
+
+# Condition for method overloading
+1. different number of parameters
+2. different type of parameters
+3. different order of parameters
+4. different return type  -   No
+
+
+# Method Overriding
+- method overriding is used to provide the specific implementation of a method that is already provided by
+the parent / super class
+- method overriding is used for runtime polymorphism
+- it is all about CHANGING the behaviour
+- in this case, we define multiple methods with the same name and SAME PARAMETERS
+- this can be performed only between parent and child class and never can be doen within a class
+
+# Interview Question
+-----------------------
+Method overloading vs Method Overriding
+1. method overloading is all about adding behaviour and method overriding is changing behavious
+2. method overloading we have methods with same name but different parameters, on the other hand in method
+overriding we have same name and same parameters
+3. method overloading can be done within same class or in parent and child class but method overriding can
+be done in parent and child class only
+
+
+# Final
+- the final keyword in java is used to restrict the user
+- final keyword can be used in many context
+1. variable
+2. method
+3. class
+
+
+- when we use final keyword with variable, it become constant means its value cannot be changed
+- when we use final keyword with parent class method, the child cannot override that method
+- when we use final keyword with class, no other class can able to inherit from the class
+
+
+# Abstraction 
+Abstraction is a process of hiding the implementation details and showig only functionality to the user
+in another word, it show only essential things to the user and hide the internal details
+
+# Abstract class and method
+- a class which declared with abstart keyword is know as abstract class
+- abstract class can contain abstract as well non abstract methods
+- abstract class consider as incomplete hence we cannot able to create an instance of the abstract class
+- abstract class always be a super class
+- the class derived from the abstract class is responsable for providing the implementation of all abstract method
+- a non abstract class derived from the abstract class must provide the implemntation of all abstract method
+
+Abstract method
+- abstract method are declared using abstract keyword
+- it cannot have a body or implementation and if we try to do so it will be a compile time error
+- only abstract class can contain abstract method
+
+
+Rectangle, Circle, Cone, Trigle
+
+width, height, radius, pie
+
+
+
+Exercise:
+
+1. Create an abstract class 'Parent' with a method 'message'. 
+It has two subclasses each having a method with the same name 'message' that prints "This is first subclass" 
+and "This is second subclass" respectively. 
+Call the methods 'message' by creating an object for each subclass.
+
+
+2.Create an abstract class 'Bank' with an abstract method 'getBalance'. 
+$100, $150 and $200 are deposited in banks A, B and C respectively. 
+'BankA', 'BankB' and 'BankC' are subclasses of class 'Bank', each having a method named 'getBalance'. 
+Call this method by creating an object of each of the three classes.
+
+
+3.We have to calculate the percentage of marks obtained in three subjects (each out of 100) by student A 
+and in four subjects (each out of 100) by student B. Create an abstract class 'Marks' with an abstract 
+method 'getPercentage'. It is inherited by two other classes 'A' and 'B' each having a method with the 
+same name which returns the percentage of the students. 
+The constructor of student A takes the marks in three subjects as its parameters and the marks
+ in four subjects as its parameters for student B. Create an object for eac of the two classes 
+and print the percentage of marks for both the students.
+
+
+# Interface
+- it is a kind of contract of contract which needs to be fullfill by a class
+- an interface in java is a blue print of a class
+- it can have static constants and abstract method
+- it is a compile time error to provide an implemtantation for any interface members
+- if a class inherit from an interface, it must provide an implementation for all interface members
+- interface can also inherit from another interface. A class that inherit from this interface must provide 
+the implementation for all interface member in the entire interface chain
+- we can not create an instance of the interface
+- we can hold the reference of a class that has implemneted interface in interface instance
+
+
+# Interview Question
+Interface vs Abstract class
+- interface is used to achieve 100% abstraction, where as abstarct classes are used for partial abstraction
+- interface can be use for multiple inheritence, where abstract class is a class which means cannot be
+inheriteded from more then one class
+
+# Functional Interace
+- a interface with a default and single abstract method are called function interface
+
+Java 8, we can have default and static methods in an interface
+Java 9, we have private method in an interface
+
+note: by default, interface field are public, static and final and the method is public and abstract
