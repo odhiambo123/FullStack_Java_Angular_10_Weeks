@@ -31,12 +31,9 @@ categories: Linux Intro
         - It changes the behavior
         - multiple methods with same names and same parameters
         - It only takes place btw child and parent class but not within a class.
- 
 ________________________________________________________
 | Key differences btw method overloading and overriding |
-|_______________________________________________________|
 | Overloading               |  Overriding               |
-|___________________________|___________________________|
 | Adding behavior           | Changing behavior         |
 | Same name different parameters| Same name Same parameters|
 
