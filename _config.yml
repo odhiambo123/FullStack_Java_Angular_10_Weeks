@@ -18,8 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Java Angular Fullstack
-email: co@example.com
+title: Java Angular Fullstack with
+#email: co@example.com
+:Varun Gupta
+:David Odhiambo
 description: Try simplifying Java! a full stack journey with Angular and Java
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
