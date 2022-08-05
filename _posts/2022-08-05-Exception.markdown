@@ -4,6 +4,8 @@ title:  "Exception"
 date:   2022-07-30
 categories: Java 
 ---
+![image](https://user-images.githubusercontent.com/8829018/183101852-c57d615a-1cc8-49b4-899d-23fac36a34d7.png)
+
 
 An exception is an event that occurs during the execution of a program that caused the application or program
 to terminate inappropriately
