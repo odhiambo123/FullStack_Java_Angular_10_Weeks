@@ -18,7 +18,7 @@ categories: Linux Intro
         - Multiple methods, same name but different parameters
         - within a class or between parent and child classes
         - It is all about adding behavior to a method
-    ### Conditions
+### Conditions
     - Different number of parameters
     - Different type of parameters
     - Different order of parameters
@@ -37,27 +37,19 @@ categories: Linux Intro
     |---------------------------|---------------------------|
     | Adding behavior           | Changing behavior         |
     | Same name different parameters| Same name Same parameters|
-
-
-### Interview Question
------------------------
-- Method overloading we have methods with same name but different parameters, on the other hand in method
-overriding we have same name and same parameters
-- method overloading can be done within same class or in parent and child class but method overriding can
-be done in parent and child class only
+    | Can be done within the same class | Can be done btw parent and child class only|
 
 
 ### Final
-- the final keyword in java is used to restrict the user
-- final keyword can be used in many context
-    -  variable
-    - method
-    - class
+- Key word used to restrict the user actions in :
+    - variables
+    - methods
+    - classes
 
 
-- When we use final keyword with variable, it become constant means its value cannot be changed
-- When we use final keyword with parent class method, the child cannot override that method
-- When we use final keyword with class, no other class can able to inherit from the class
+- The Final Key word in Variable makes it a constant and it cannot be changed
+- When used in a parent class method, No child class can override the method.
+- When usd with a class, no other class can inherit from the class
 
 
 # Abstraction 
@@ -65,12 +57,12 @@ Abstraction is a process of hiding the implementation details and showing only f
 in another word, it show only essential things to the user and hide the internal details
 
 # Abstract class and method
-- a class which declared with abstart keyword is know as abstract class
+- a class which declared with abstract keyword is know as abstract class
 - abstract class can contain abstract as well non abstract methods
 - abstract class consider as incomplete hence we cannot able to create an instance of the abstract class
 - abstract class always be a super class
-- the class derived from the abstract class is responsable for providing the implementation of all abstract method
-- a non abstract class derived from the abstract class must provide the implemntation of all abstract method
+- the class derived from the abstract class is responsible for providing the implementation of all abstract method
+- a non abstract class derived from the abstract class must provide the implementation of all abstract method
 
 Abstract method
 - abstract method are declared using abstract keyword
@@ -78,7 +70,7 @@ Abstract method
 - only abstract class can contain abstract method
 
 
-Rectangle, Circle, Cone, Trigle
+Rectangle, Circle, Cone, Triangle
 
 width, height, radius, pie
 
@@ -108,24 +100,24 @@ and print the percentage of marks for both the students.
 
 
 # Interface
-- it is a kind of contract of contract which needs to be fullfill by a class
+- it is a kind of contract of contract which needs to be fullfil by a class
 - an interface in java is a blue print of a class
 - it can have static constants and abstract method
-- it is a compile time error to provide an implemtantation for any interface members
+- it is a compile time error to provide an implementation for any interface members
 - if a class inherit from an interface, it must provide an implementation for all interface members
 - interface can also inherit from another interface. A class that inherit from this interface must provide 
 the implementation for all interface member in the entire interface chain
 - we can not create an instance of the interface
-- we can hold the reference of a class that has implemneted interface in interface instance
+- we can hold the reference of a class that has implemented interface in interface instance
 
 
 # Interview Question
 Interface vs Abstract class
-- interface is used to achieve 100% abstraction, where as abstarct classes are used for partial abstraction
-- interface can be use for multiple inheritence, where abstract class is a class which means cannot be
-inheriteded from more then one class
+- interface is used to achieve 100% abstraction, where as abstract classes are used for partial abstraction
+- interface can be use for multiple inheritance, where abstract class is a class which means cannot be
+inherited from more then one class
 
-# Functional Interace
+# Functional Interface
 - a interface with a default and single abstract method are called function interface
 
 Java 8, we can have default and static methods in an interface
