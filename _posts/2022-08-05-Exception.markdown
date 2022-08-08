@@ -217,3 +217,156 @@ public class Demo5 {
     }
 }
 ```
+
+
+
+# Examples of user already logged in exception demo6
+# Demo6
+```java
+class Authentication {
+    public void login(String email, String password) {
+        if (email.equals("admin") && password.equals("123")) {
+            System.out.println("login successfull");
+        } else {
+            System.out.println("login failed, try again");
+        }
+    }
+}
+
+public class Demo6 {
+    public static void main(String[] args) {
+        Authentication auth = new Authentication();
+        auth.login("admin", "123");
+
+        auth.login("admin", "123");
+    }
+}
+```
+
+# Demo7  throwing multiple exceptions. 
+```java
+import java.io.IOException;
+
+class Calculator{
+    public void test() throws ArithmeticException, NumberFormatException, IOException {
+
+    }
+}
+
+public class Demo7 {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        try {
+            calculator.test();
+        }
+        catch (NumberFormatException ex){
+
+        }
+        catch (ArithmeticException ex){
+
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+```
+
+# Demo8 different methods if chained and the original throws exception they all must throw
+```java
+public class Demo8 {
+    public static void main(String[] args) {
+        try {
+            doSomething();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void doSomething() throws Exception {//3
+        doSomethingElse();
+    }
+
+    public static void doSomethingElse() throws Exception {//2
+        doSomethingSomethingElse();
+    //since the doSomethingSomethingElse() throws Exception doSomething has to throw as well. the sam applies to the other two
+    }
+
+    public static void doSomethingSomethingElse() throws Exception { //1
+        throw new Exception();
+    }
+}
+
+```
+
+# Demo 9
+```java
+/**
+ * ArrayIndexOutOfBoundException
+ *
+ * Throwable -> Exception -> RinTimeException -> IndexOutOfBound -> ArrayIndexOutOfBoundException
+ * */
+
+public class Demo9 {
+    public static void main(String[] args) {
+        int[] a = new int[3];
+        a[0] = 10;
+        a[1] = 20;
+        a[2] = 30;
+
+        try{
+            System.out.println(a[10]);
+        }catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
+}
+
+```
+# Demo10 Null pointer
+```java
+/**
+ * NullPointerException
+ *
+ * Throwable -> Exception -> RuntimeException -> NullPointerException
+ *
+ * */
+
+class Customer{
+    public void display(){
+        System.out.println("displaying...");
+    }
+}
+
+public class Demo10 {
+    public static void main(String[] args) {
+        String str = "Mark";
+        System.out.println(str.length());
+
+        String str2 = null;
+        try{
+            System.out.println(str2.length());
+        }catch (NullPointerException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        Customer cust1 = new Customer();
+        cust1.display();
+
+        Customer cust2 = null;
+        try{
+            cust2.display();
+        }catch (NullPointerException ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
+}
+```
+# Demo 11 stack overflow
+
+```java
+
+```
