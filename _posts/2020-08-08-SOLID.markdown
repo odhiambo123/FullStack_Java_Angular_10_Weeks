@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "SOLID"
+date:   2022-08-08
+categories: 
+---
+### S - Single responsibility principle
+- Every class should have a special responsibility no overloading responsibilities
+### O - Open / Close principle
+- Software entities(class, module, function etc) should be open for extension and closed for modification
+### L - Liskov Substitution principle
+- Derived class must be substitute of the base class or parent class.
+- when should a class B inherit from class A?
+    - If you want object of B to be used wherever an object of A is used
+    - if you want to use an object of A in making of the object of B then use delegation
+### I - Interface segregation principle
+- Do not force any  client to implement an interface which is irrelevant to them.  
+### D - Dependency Inversion Principle
+- High level modules and low level modules should not directly depend on one another but on abstraction
+- This ensures loosely coupled entities so they can be modified independent of each other.
+
+
+DRY - Don’t Repeat Yourself  
+YAGNI- You Aren’t Gonna Need It 
+SRP - Single Responsibility Principle 
+OCP - Open Closed Principle 
+LSP - Liskov’s Substitution Principle 
+DIP - Dependency Inversion Principle 
+[more](https://www.youtube.com/watch?v=XgoldEoK-Rw&t=706s)
