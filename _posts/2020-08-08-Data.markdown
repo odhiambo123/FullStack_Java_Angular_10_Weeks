@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "Data"
+date:   2020-08-08
+categories: Java
+---
+Data - piece of information
+
+Types
+- Structural 
+    - tables RDBMS 
+        - Mysql relational database
+        - SQL Server, 
+        - Oracle, 
+        - SQLite
+- Semi structural
+    - JSON 
+    - NoSQL
+    - MongoDB
+    - Casandra
+- 
+- Unstructured
+    - Photos
+    - videos
+    - audio
+    - files
+    - oneDrive
+    - AWS S3
+    - Azure Blobs
+- RDBMS Relational Database Management System
+    - based on relationship model
+    - stores data in form of tables
+    - provides referential integrity between rows and columns of various tables
+    - uses many SQL queries and combines useful information using joins
+    - 
+    - 
+- Entity:
+    - any real world object that has data that can be stored
+- Relationships
+    - one to one
+    - one to many
+    - many to many
+- Data Types
+    - numeric
+        - tinyint 
+        - smallint
+        - integer
+        - float
+        - double
+        - 
+    - date and time 
+        - year
+        - date
+        - timestamp
+    - string
+        - char
+            - character has a fixed size. occupies a fixed size space
+            - performance efficient
+        - varchar
+            - memory efficient. denotes limit and only takes the space used
+    ### SQL Statements
+- DDL 
+    - Data definition language
+        - consists of the commands that can be used to defines schema 
+        - It deals with description of the database schema and is used 
+- DML
+    - Data Manipulation Language
+- DQL
+    - Data Query language
+- TCL
+    - Transactional control language
+
