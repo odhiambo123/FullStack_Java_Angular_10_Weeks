@@ -8,6 +8,8 @@ categories:
 - Every class should have a special responsibility no overloading responsibilities
 ### O - Open / Close principle
 - Software entities(class, module, function etc) should be open for extension and closed for modification
+Bertrand Meyer-1988 
+[more](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
 ### L - Liskov Substitution principle
 - Introduced by Barbara Liskov in a 1988
 - Derived class must be substitute of the base class or parent class.

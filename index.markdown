@@ -4,4 +4,4 @@
 
 layout: home
 ---
-![AngulaJS and Java EE image](https://user-images.githubusercontent.com/8829018/183598618-104a465d-76cf-419e-914a-eeb56ae4240d.png)
+![AngularJS and Java EE image](https://user-images.githubusercontent.com/8829018/183598618-104a465d-76cf-419e-914a-eeb56ae4240d.png)
