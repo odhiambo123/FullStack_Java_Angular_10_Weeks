@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Application Model
+title: "Application Model"
 date: 2022-08-09
 categories: Java
 
