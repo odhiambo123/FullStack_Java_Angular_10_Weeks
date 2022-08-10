@@ -1,0 +1,447 @@
+---
+layout: post
+title:  "Data"
+date:   2020-08-08
+categories: Java
+---
+Data - piece of information
+
+Types
+- Structural 
+    - tables RDBMS 
+        - Mysql relational database
+        - SQL Server, 
+        - Oracle, 
+        - SQLite
+- Semi structural
+    - JSON 
+    - NoSQL
+    - MongoDB
+    - Casandra
+- 
+- Unstructured
+    - Photos
+    - videos
+    - audio
+    - files
+    - oneDrive
+    - AWS S3
+    - Azure Blobs
+- RDBMS Relational Database Management System
+    - based on relationship model
+    - stores data in form of tables
+    - provides referential integrity between rows and columns of various tables
+    - uses many SQL queries and combines useful information using joins
+    - 
+    - 
+- Entity:
+    - any real world object that has data that can be stored
+- Relationships
+    - one to one
+    - one to many
+    - many to many
+- Data Types
+    - numeric
+        - tinyint 
+        - smallint
+        - integer
+        - float
+        - double
+        - 
+    - date and time 
+        - year
+        - date
+        - timestamp
+    - string
+        - char
+            - character has a fixed size. occupies a fixed size space
+            - performance efficient
+        - varchar
+            - memory efficient. denotes limit and only takes the space used
+    ### SQL Statements
+- DDL 
+    - Data definition language
+        - consists of the commands that can be used to defines schema 
+        - It deals with description of the database schema and is used 
+- DML
+    - Data Manipulation Language
+- DQL
+    - Data Query language
+- TCL
+    - Transactional control language
+
+## MySQL
+
+### Start the server:
+```sql
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld"
+```
+### Stopping the server:
+
+```"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin" -u root shutdown```
+
+[Customizing path:](https://dev.mysql.com/doc/refman/8.0/en/mysql-installation-windows-path.html)
+
+
+```sql
+mysql -u root -p
+```
+- you can change root to any `user`
+- then enter password
+
+### To reset password:
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED BY '<strong password>';
+
+```
+### Create a new user:
+```sql
+mysql> create user 'amc' identified by '<strong password>';
+```
+
+### Restrict access:
+```sql
+mysql> create user 'amc'@'localhost' identified by '<strong password>';
+```
+### Show all databases:
+```sql
+SHOW DATABASES;
+```
+
+``` SHOW SCHEMAS ```
+
+### Choose the database to work on
+```sql
+use databasename;
+```
+
+### Create the database
+
+```sql
+mysql> create database myCoolDB;
+```
+
+### Grant all access to the user amc2:
+```sql
+mysql> grant all on myCoolDB.* to 'amc2';
+```
+
+
+# MySQL Constraint
+- these contraint in MySQL is used to specified the rules or restrict what value / data will be store in the table
+- they provide a suitable method to ensure data accuracy and integrity inside the table
+
+# Type of containts
+1. column level constraint - are applied only to the single column that limit the type of particular column data
+2. table level constraint - are applied to the entire table that limit the type of data for the whole table
+
+
+# NOT NULL
+# Check
+# Default
+# Primary Key
+# AUTO_INCREMENT
+# Unique
+# Enum
+
+
+# NOT NULL
+
+```sql
+
+create table employee (id integer Primary key, firstname char(50) NOT NULL,lastname char(50) NOT NULL, email char(50) NOT NULL);
+Query OK, 0 rows affected (0.01 sec)
+```
+
+`describe employee;`
+
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | NO   |     | NULL    |       |
+| email | char(50) | NO   |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+insert into employee (id, name) values (1, 'mark');
+ERROR 1364 (HY000): Field 'email' doesn't have a default value
+mysql>
+
+# Check
+mysql> create table employee (id integer, name char(50), age integer CHECK(age >= 18));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe employee;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
+| age   | int      | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into employee (id, name, age) values (1, 'Mark', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee (id, name, age) values (2, 'paul', 15);
+ERROR 3819 (HY000): Check constraint 'employee_chk_1' is violated.
+mysql>
+
+
+# Default
+mysql> create table employee (id integer, name char(50), country char(50) DEFAULT 'USA');
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe employee;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| id      | int      | YES  |     | NULL    |       |
+| name    | char(50) | YES  |     | NULL    |       |
+| country | char(50) | YES  |     | USA     |       |
++---------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into employee (id, name, country) values (1, 'Mark', 'UK');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee (id, name) values (2, 'John');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++------+------+---------+
+| id   | name | country |
++------+------+---------+
+|    1 | Mark | UK      |
+|    2 | John | USA     |
++------+------+---------+
+2 rows in set (0.00 sec)
+
+
+# Primary key
+we can have only one primary key per table and this we make the column value not null and unique
+
+mysql> create table employee (id integer primary key, name char(50));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe employee;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | NO   | PRI | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into employee values (1, 'maek');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values (1, 'maek');
+ERROR 1062 (23000): Duplicate entry '1' for key 'employee.PRIMARY'
+mysql> insert into employee values (2, 'maek');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++----+------+
+| id | name |
++----+------+
+|  1 | maek |
+|  2 | maek |
++----+------+
+2 rows in set (0.00 sec)
+
+
+# AUTO_INCREMENT
+```sql
+mysql> create table employee (id integer primary key AUTO_INCREMENT, name char(50));
+Query OK, 0 rows affected (0.02 sec)
+```
+
+```sql
+describe employee;
+```
++-------+----------+------+-----+---------+----------------+
+| Field | Type     | Null | Key | Default | Extra          |
++-------+----------+------+-----+---------+----------------+
+| id    | int      | NO   | PRI | NULL    | auto_increment |
+| name  | char(50) | YES  |     | NULL    |                |
++-------+----------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+
+mysql> insert into employee (name) values ('Mark');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee (name) values ('smith');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee (name) values ('john');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++----+-------+
+| id | name  |
++----+-------+
+|  1 | Mark  |
+|  2 | smith |
+|  3 | john  |
++----+-------+
+3 rows in set (0.00 sec)
+
+
+# Unique
+
+mysql> create table employee (id integer, name char(50), email char(50) UNIQUE);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> describe employee;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
+| email | char(50) | YES  | UNI | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into employee values (1, 'mark', 'm@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values (1, 'mark', 'm@gmail.com');
+ERROR 1062 (23000): Duplicate entry 'm@gmail.com' for key 'employee.email'
+mysql> insert into employee values (1, 'mark', 'm2@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++------+------+--------------+
+| id   | name | email        |
++------+------+--------------+
+|    1 | mark | m@gmail.com  |
+|    1 | mark | m2@gmail.com |
++------+------+--------------+
+2 rows in set (0.00 sec)
+
+
+# Enum
+mysql> create table employee (id integer, gender ENUM('male', 'female'));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe employee;
++--------+-----------------------+------+-----+---------+-------+
+| Field  | Type                  | Null | Key | Default | Extra |
++--------+-----------------------+------+-----+---------+-------+
+| id     | int                   | YES  |     | NULL    |       |
+| gender | enum('male','female') | YES  |     | NULL    |       |
++--------+-----------------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> insert into employee values (1, 'male');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values (2, 'female');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values (3, 'f');
+ERROR 1265 (01000): Data truncated for column 'gender' at row 1
+mysql> insert into employee values (3, 'Female');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++------+--------+
+| id   | gender |
++------+--------+
+|    1 | male   |
+|    2 | female |
+|    3 | female |
++------+--------+
+3 rows in set (0.00 sec)
+
+
+# Advance queries / Mysql Clauses
+- where
+- distinct
+- from
+- order by
+- group by
+- having
+
+
+# MySQL where clause
+where clause is used to write condition
+
+- where - the single condition
+> select * from employee where id  =1;
+
+- AND  - both side condition should be true
+> select * from employee where id = 1 and name = '';
+
+- OR - either of the condition is true
+> select * from employee where id = 1 or name = '';
+
+
+mysql> create table users (id integer, email char(50), password char(50));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into users values (1, 'test1', '123');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into users values (2, 'test2', '123');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into users values (3, 'test3', '987');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from users;
++------+-------+----------+
+| id   | email | password |
++------+-------+----------+
+|    1 | test1 | 123      |
+|    2 | test2 | 123      |
+|    3 | test3 | 987      |
++------+-------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from users where id = 1;
++------+-------+----------+
+| id   | email | password |
++------+-------+----------+
+|    1 | test1 | 123      |
++------+-------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from users where id = 2;
++------+-------+----------+
+| id   | email | password |
++------+-------+----------+
+|    2 | test2 | 123      |
++------+-------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from users where email = 'test1' and password = '123';
++------+-------+----------+
+| id   | email | password |
++------+-------+----------+
+|    1 | test1 | 123      |
++------+-------+----------+
+1 row in set (0.00 sec)
+
+```sql
+mysql> select * from users where email = 'test1' and password = '987';
+Empty set (0.00 sec)
+```
+
+
+```sql
+mysql> select * from users where email = 'test1' or password = '987';
+```
+
++------+-------+----------+
+| id   | email | password |
++------+-------+----------+
+|    1 | test1 | 123      |
+|    3 | test3 | 987      |
++------+-------+----------+
+2 rows in set (0.00 sec)
+
