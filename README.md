@@ -1,3 +1,3 @@
 # FullStack Java Angular
 
-[Read it Here](https://www.atwoli.com)
+[Read it Here](https://bejewelled-scone-08a1d9.netlify.app/)
